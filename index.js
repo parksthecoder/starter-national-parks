@@ -96,55 +96,74 @@ const sortByRating = (parkA, parkB) => {
   return parkBRating - parkARating;
 };
 
-// function for handling the nameSorter click
+// // function for handling the nameSorter click
+// const nameSorterClickHandler = (event) => {
+//   event.preventDefault();
+
+//   // 1.  get the main element
+//   const main = document.querySelector("main");
+
+//   // 2. get the list of parks
+//   const parksList = main.querySelectorAll(".park-display");
+
+//   // 3. empty the main
+//   main.innerHTML = "";
+
+//   // 4. create an array from Nodelist
+//   const parksArray = Array.from(parksList);
+
+//   // 5. sort the array
+//   parksArray.sort(sortByName);
+
+//   // 6. Insert each park into the DOM
+//   parksArray.forEach((park) => {
+//     main.appendChild(park);
+//   });
+// };
+
+// direct data access comes from data.js so we can remove all DOM access && manipulation
 const nameSorterClickHandler = (event) => {
   event.preventDefault();
 
-  // 1.  get the main element
-  const main = document.querySelector("main");
+  parks.sort(sortByName);
 
-  // 2. get the list of parks
-  const parksList = main.querySelectorAll(".park-display");
-
-  // 3. empty the main
-  main.innerHTML = "";
-
-  // 4. create an array from Nodelist
-  const parksArray = Array.from(parksList);
-
-  // 5. sort the array
-  parksArray.sort(sortByName);
-
-  // 6. Insert each park into the DOM
-  parksArray.forEach((park) => {
-    main.appendChild(park);
-  });
+  render();
 };
 
 // function to handle the ratingSorter click
+// const ratingSorterClickHandler = (event) => {
+//   event.preventDefault();
+
+//   // 1.  get the main element
+//   const main = document.querySelector("main");
+
+//   // 2. get the list of parks
+//   const parksList = main.querySelectorAll(".park-display");
+
+//   // 3. empty the main
+//   main.innerHTML = "";
+
+//   // 4. create an array
+//   const parksArray = Array.from(parksList);
+
+//   // 5. sort the array
+//   parksArray.sort(sortByRating);
+
+//   // 6. Insert each park into the DOM
+//   parksArray.forEach((park) => {
+//     main.appendChild(park);
+//   });
+// };
+
+// direct data access comes from data.js so we can remove all DOM access && manipulation
 const ratingSorterClickHandler = (event) => {
   event.preventDefault();
 
-  // 1.  get the main element
-  const main = document.querySelector("main");
+  parks.sort(sortByRating);
 
-  // 2. get the list of parks
-  const parksList = main.querySelectorAll(".park-display");
-
-  // 3. empty the main
-  main.innerHTML = "";
-
-  // 4. create an array
-  const parksArray = Array.from(parksList);
-
-  // 5. sort the array
-  parksArray.sort(sortByRating);
-
-  // 6. Insert each park into the DOM
-  parksArray.forEach((park) => {
-    main.appendChild(park);
-  });
+  render();
 };
+
 
 // the point where all the code starts
 const main = () => {
