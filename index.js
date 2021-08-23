@@ -9,7 +9,7 @@
 // };
 
 // multiple ways to get the data 
-// FormData populated with forms data in key-value pairs 
+// FormData populated with the forms data in key-value pairs 
 
 const submitHandler = (event) => {
   event.preventDefault();
@@ -21,7 +21,9 @@ const submitHandler = (event) => {
 };
 
 
-
+// main() function will select the #park-form - form then addEventListener
+// the addEventListener will take a "submit" event for the form
+// once the form is submitted the submitHandler runs
 const main = () => {
   // Get the form element
   const form = document.querySelector("#park-form");
@@ -29,7 +31,7 @@ const main = () => {
   // Attach the submit handler
   form.addEventListener("submit", submitHandler);
 };
-
+// main() function waits for DOMContentLoad -> waits for DOM to be fully loaded
 window.addEventListener("DOMContentLoaded", main);
 
 
