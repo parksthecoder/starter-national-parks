@@ -61,9 +61,21 @@ const favoriteButtonClickHandler = (event) => {
 };
 
 // function for sorting by name
+// const sortByName = (parkA, parkB) => {
+//   const parkAName = parkA.querySelector("h2").innerText;
+//   const parkBName = parkB.querySelector("h2").innerText;
+//   if (parkAName < parkBName) {
+//     return -1;
+//   } else if (parkAName > parkBName) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// };
+
 const sortByName = (parkA, parkB) => {
-  const parkAName = parkA.querySelector("h2").innerText;
-  const parkBName = parkB.querySelector("h2").innerText;
+  const parkAName = parkA.name;
+  const parkBName = parkB.name;
   if (parkAName < parkBName) {
     return -1;
   } else if (parkAName > parkBName) {
@@ -97,7 +109,7 @@ const nameSorterClickHandler = (event) => {
   // 3. empty the main
   main.innerHTML = "";
 
-  // 4. create an array
+  // 4. create an array from Nodelist
   const parksArray = Array.from(parksList);
 
   // 5. sort the array
