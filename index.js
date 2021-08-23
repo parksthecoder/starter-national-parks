@@ -253,23 +253,23 @@ ratingSorter.addEventListener("click", (event) => {
 
     // 5. Sort the array
 parksArray.sort((parkA, parkB) => {
-    const ratings = document.querySelectorAll(".rating-display .value")
+    // const ratings = document.querySelectorAll(".rating-display .value")
 
-    for (let rating of ratings) {
-        let ratingValue = parseFloat(rating.innerText)
+    const parkARating = parkA.querySelector(".rating-display .value").innerText
+    const parkBRating = parkB.querySelector(".rating-display .value").innerText
+    // for (let rating of ratings) {
+    //     const parkARating = parseFloat(rating.innerText)
+    //     const parkBRating = parseFloat(rating.innerText)
 
-            // the park names are located in the innerText of <h2> element
-    const parkARating = parkA.querySelector(".rating-display .value").innerText;
-    const parkBRating = parkB.querySelector(".rating-display .value").innerText;
-    if (parkARating < parkBRating) {
-      return -1;
-    } else if (parkARating > parkBRating) {
-      return 1;
-    } else {
-      return 0;
-    }
-    }
 
+
+    //         // the park names are located in the innerText of <h2> element
+    // // const parkARating = parkA.querySelector(".rating-display .value").innerText;
+    // // const parkBRating = parkB.querySelector(".rating-display .value").innerText;
+    // return parkARating - parkBRating
+    // }
+
+    return parkARating - parkBRating
   });
   // 6. Insert each park into the DOM
   parksArray.forEach((park) => {
